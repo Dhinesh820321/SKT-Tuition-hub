@@ -1,0 +1,196 @@
+/* =============================================
+   Contact Page Styles
+   ============================================= */
+
+.contact-hero {
+    padding: 8rem 1.5rem 4rem;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.contact-hero p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.05rem;
+}
+
+/* Contact Cards */
+.contact__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-info-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+    color: var(--primary-600);
+}
+
+.contact-info-card h4 {
+    font-size: 0.95rem;
+    color: var(--primary-800);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-card p,
+.contact-info-card a {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+    display: block;
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-600);
+}
+
+/* Form + Map Grid */
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact__form-wrapper {
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.contact__form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-800);
+    margin-bottom: 1.75rem;
+}
+
+.contact__field {
+    margin-bottom: 1.25rem;
+}
+
+.contact__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.contact__sent {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.contact__sent h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-800);
+    margin: 1rem 0 0.5rem;
+}
+
+.contact__sent p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+/* Map */
+.contact__map {
+    min-height: 400px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.contact__map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* MUI overrides */
+.contact__form .MuiOutlinedInput-root {
+    border-radius: 10px;
+}
+
+.contact__form .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-400);
+}
+
+.contact__form .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-600);
+}
+
+.contact__form .MuiInputLabel-root.Mui-focused {
+    color: var(--primary-600);
+}
+
+/* WhatsApp CTA */
+.contact__whatsapp-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    border-radius: var(--radius-lg);
+    border: 1px solid #bbf7d0;
+}
+
+.contact__whatsapp-cta h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+}
+
+.contact__whatsapp-cta p {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+}
+
+.contact__whatsapp-cta>div {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__whatsapp-cta {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}

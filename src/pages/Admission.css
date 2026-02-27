@@ -1,0 +1,161 @@
+/* =============================================
+   Admission Page Styles
+   ============================================= */
+
+.admission-hero {
+    padding: 8rem 1.5rem 4rem;
+    text-align: center;
+    color: #fff;
+}
+
+.admission-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.admission-hero p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.05rem;
+}
+
+/* Layout */
+.admission__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Info Side */
+.admission__info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--primary-800);
+}
+
+.admission__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.admission__benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    color: var(--gray-700);
+}
+
+.admission__contact-info {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-50), var(--gold-50));
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--gold-400);
+}
+
+.admission__contact-info h4 {
+    font-size: 1rem;
+    color: var(--primary-800);
+    margin-bottom: 0.35rem;
+}
+
+.admission__contact-info p {
+    font-size: 0.88rem;
+    color: var(--gray-600);
+    margin-bottom: 0.15rem;
+}
+
+.admission__contact-info a {
+    color: var(--primary-600);
+    font-weight: 600;
+}
+
+/* Form */
+.admission__form-wrapper {
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.admission__form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--primary-800);
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+.admission__field {
+    margin-bottom: 1.25rem;
+}
+
+.admission__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Success */
+.admission__success {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.admission__success h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--primary-800);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.admission__success p {
+    color: var(--gray-500);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+}
+
+.admission__success-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-500), var(--gold-400));
+    border-radius: var(--radius-full);
+    margin: 0 auto;
+}
+
+/* MUI Overrides */
+.admission__form .MuiOutlinedInput-root {
+    border-radius: 10px;
+}
+
+.admission__form .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-400);
+}
+
+.admission__form .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-600);
+}
+
+.admission__form .MuiInputLabel-root.Mui-focused {
+    color: var(--primary-600);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .admission__layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .admission__row {
+        grid-template-columns: 1fr;
+    }
+
+    .admission__form-wrapper {
+        padding: 1.75rem;
+    }
+}
