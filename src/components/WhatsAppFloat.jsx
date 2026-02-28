@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function WhatsAppFloat() {
     return (
         <motion.a
-            href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20admission%20at%20Sri%20Karthikeya%20Tuition%20Hub"
+            href="https://wa.me/917639961310?text=Hi%2C%20I%20am%20interested%20in%20admission%20at%20Sri%20Karthikeya%20Tuition%20Hub"
             target="_blank"
             rel="noreferrer"
             className="whatsapp-float"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -7,10 +7,11 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import ScrollProgress from './components/ScrollProgress';
 
 import Home from './pages/Home';
+import Staff from './pages/Staff';
 import Gallery from './pages/Gallery';
 import Admission from './pages/Admission';
 import Contact from './pages/Contact';
-import StaffDetail from './pages/StaffDetail';
+import StaffProfile from './pages/StaffProfile';
 
 
 function ScrollToTop() {
@@ -33,10 +34,11 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+          <Route path="/staff" element={<Staff />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/staff/:id" element={<StaffDetail />} />
+          <Route path="/staff/:id" element={<StaffProfile />} />
 
         </Routes>
       </AnimatePresence>

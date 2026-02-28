@@ -99,13 +99,16 @@ a {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--gray-100);
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
   border-radius: var(--radius-full);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--primary-500), var(--primary-700));
 }
@@ -202,8 +205,15 @@ a {
 
 /* Animated background gradient */
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .animated-gradient {
@@ -214,8 +224,15 @@ a {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floating {
@@ -224,8 +241,13 @@ a {
 
 /* Skeleton loading */
 @keyframes shimmer {
-  0% { background-position: -468px 0; }
-  100% { background-position: 468px 0; }
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
 }
 
 /* Section spacing */

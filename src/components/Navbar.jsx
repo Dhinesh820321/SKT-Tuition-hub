@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import SchoolIcon from '@mui/icons-material/School';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 const navLinks = [
     { path: '/', label: 'Home' },
+    { path: '/staff', label: 'Staff' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/admission', label: 'Admission' },
     { path: '/contact', label: 'Contact' },
@@ -25,6 +26,7 @@ export default function Navbar() {
     }, []);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMobileOpen(false);
     }, [location]);
 
@@ -36,12 +38,24 @@ export default function Navbar() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
         >
             <div className="navbar__container">
-                <Link to="/" className="navbar__logo">
-                    <SchoolIcon sx={{ fontSize: 32, color: scrolled ? '#1a56db' : '#fff' }} />
-                    <div className="navbar__logo-text">
-                        <span className="navbar__brand">Sri Karthikeya</span>
-                        <span className="navbar__tagline">Tuition & Skill Development</span>
-                    </div>
+                <Link to="/" className="navbar__brand">
+                    <motion.img
+                        src={logo}
+                        alt="Sri Karthikeya Logo"
+                        className="navbar__logo-img"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.5 }}
+                    />
+                    <motion.span
+                        className="navbar__brand-text"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        Sri Karthikeya Tution Hub
+                    </motion.span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -68,7 +82,7 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <button className="navbar__toggle" onClick={() => setMobileOpen(!mobileOpen)}>
                     {mobileOpen ? (
-                        <CloseIcon sx={{ fontSize: 28, color: scrolled ? '#1a56db' : '#fff' }} />
+                        <CloseIcon sx={{ fontSize: 28, color: (scrolled || mobileOpen) ? '#1a56db' : '#fff' }} />
                     ) : (
                         <MenuIcon sx={{ fontSize: 28, color: scrolled ? '#1a56db' : '#fff' }} />
                     )}

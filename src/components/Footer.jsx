@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SchoolIcon from '@mui/icons-material/School';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,96 +8,93 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import logo from '../assets/logo.png';
 import './Footer.css';
 
 export default function Footer() {
+    const fadeUp = {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.6 }
+    };
+
     return (
-        <footer className="footer">
-            <div className="footer__wave">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                    <path
-                        d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z"
-                        fill="currentColor"
-                    />
-                </svg>
-            </div>
-
-            <div className="footer__content">
-                <div className="footer__container">
-                    {/* Brand */}
-                    <div className="footer__brand">
-                        <div className="footer__logo">
-                            <SchoolIcon sx={{ fontSize: 36, color: '#d4a843' }} />
-                            <div>
-                                <h3>Sri Karthikeya</h3>
-                                <span>Tuition Hub – Mannampandal</span>
-                            </div>
-                        </div>
-                        <p className="footer__desc">
-                            Nurturing young minds with quality education since 2015.
-                            Building a strong academic foundation for Classes I to X.
+        <footer className="footer-v3">
+            <div className="footer-container-v3">
+                <div className="footer-grid-v3">
+                    {/* LEFT SIDE: BRANDING */}
+                    <motion.div className="footer-brand-v3" {...fadeUp}>
+                        <Link to="/" className="footer-logo-wrapper">
+                            <motion.img
+                                src={logo}
+                                alt="Sri Karthikeya"
+                                className="footer-logo-img"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            />
+                        </Link>
+                        <h3 className="footer-brand-name">Sri Karthikeya Tution Hub</h3>
+                        <p className="footer-brand-desc">
+                            CBSE | Matric | State Board | Weekend Skill Development
                         </p>
-                        <div className="footer__socials">
-                            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer__social" aria-label="Facebook">
-                                <FacebookIcon />
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer__social" aria-label="Instagram">
-                                <InstagramIcon />
-                            </a>
-                            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="footer__social" aria-label="YouTube">
-                                <YouTubeIcon />
-                            </a>
-                            <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="footer__social footer__social--whatsapp" aria-label="WhatsApp">
-                                <WhatsAppIcon />
-                            </a>
+                        <div className="footer-social-links">
+                            <motion.a href="#" whileHover={{ y: -5, scale: 1.1 }} className="social-icon"><FacebookIcon /></motion.a>
+                            <motion.a href="https://www.instagram.com/srikarthikeya_tuition_hub20254?igsh=NXNsb2dpZDJ6dnR3" whileHover={{ y: -5, scale: 1.1 }} className="social-icon"><InstagramIcon /></motion.a>
+                            <motion.a href="#" whileHover={{ y: -5, scale: 1.1 }} className="social-icon"><YouTubeIcon /></motion.a>
+                            <motion.a href="https://wa.me/917639961310" whileHover={{ y: -5, scale: 1.1 }} className="social-icon wa"><WhatsAppIcon /></motion.a>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Quick Links */}
-                    <div className="footer__section">
+                    {/* CENTER: QUICK LINKS */}
+                    <motion.div className="footer-links-v3" {...fadeUp} transition={{ delay: 0.2 }}>
                         <h4>Quick Links</h4>
-                        <ul>
+                        <ul className="links-list-v3">
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/gallery">Gallery</Link></li>
-                            <li><Link to="/admission">Admission</Link></li>
-                            <li><Link to="/contact">Contact Us</Link></li>
+                            <li><a href="/#classes">Our Classes</a></li>
+                            <li><Link to="/staff">Our Staff</Link></li>
+                            <li><Link to="/admission-form">Admission</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
-                    </div>
+                    </motion.div>
 
-                    {/* Classes */}
-                    <div className="footer__section">
-                        <h4>Our Classes</h4>
-                        <ul>
-                            <li>Class I – V (Primary)</li>
-                            <li>Class VI – VIII (Middle)</li>
-                            <li>Class IX – X (High School)</li>
-                            <li>Skill Development</li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="footer__section">
+                    {/* RIGHT SIDE: CONTACT INFO */}
+                    <motion.div className="footer-contact-v3" {...fadeUp} transition={{ delay: 0.4 }}>
                         <h4>Contact Info</h4>
-                        <ul className="footer__contact">
+                        <ul className="contact-info-list">
                             <li>
-                                <LocationOnIcon sx={{ fontSize: 18 }} />
-                                <span>Mannampandal, Tamil Nadu</span>
+                                <div className="icon-circle-v3"><LocationOnIcon /></div>
+                                <span>Mayiladuthurai-Mannampandal-
+                                    Tamil Nadu</span>
                             </li>
                             <li>
-                                <PhoneIcon sx={{ fontSize: 18 }} />
-                                <a href="tel:+919876543210">+91 98765 43210</a>
+                                <div className="icon-circle-v3"><PhoneIcon /></div>
+                                <a href="tel:+917639961310">+91 76399 61310</a>
                             </li>
                             <li>
-                                <EmailIcon sx={{ fontSize: 18 }} />
-                                <a href="mailto:info@srikarthikeya.in">info@srikarthikeya.in</a>
+                                <div className="icon-circle-v3"><WhatsAppIcon /></div>
+                                <a href="https://wa.me/917639961310">+91 76399 61310</a>
+                            </li>
+                            <li>
+                                <div className="icon-circle-v3"><EmailIcon /></div>
+                                <a href="mailto:srikarthikeyatuitionhub@gmail.com">srikarthikeyatuitionhub@gmail.com</a>
                             </li>
                         </ul>
-                    </div>
+                    </motion.div>
                 </div>
 
-                <div className="footer__bottom">
-                    <p>© {new Date().getFullYear()} Sri Karthikeya Tuition Hub. All rights reserved.</p>
-                    <p className="footer__credits">Crafted with ❤️ for quality education</p>
+                {/* COPYRIGHT SECTION */}
+                <div className="footer-bottom-v3">
+                    <motion.div
+                        className="footer-divider-v3"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '100%' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                    ></motion.div>
+                    <div className="copyright-text">
+                        © {new Date().getFullYear()} Sri Karthikeya Tution Hub. All Rights Reserved.
+                    </div>
                 </div>
             </div>
         </footer>

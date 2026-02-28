@@ -11,48 +11,7 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import StarIcon from '@mui/icons-material/Star';
 
 // We can reuse some of the data from the Home page or define it centrally
-export const staffData = [
-    {
-        id: 'subalakshmi',
-        name: 'K. Subalakshmi',
-        role: 'Senior Educator',
-        subjects: ['Tamil', 'Science', 'Handwriting', 'Spoken English', 'Phonics', 'Dolls Making'],
-        experience: '12+ Years in primary & middle school education. Expert in creative teaching and skill development.',
-        bio: 'Mrs. Subalakshmi is known for her innovative teaching methods and dedication to nurturing young minds. She leads our weekend skill development programs with a focus on holistic growth.',
-        email: 'subalakshmi@srikarthikeya.in',
-        phone: '+91 98765 43210'
-    },
-    {
-        id: 'radha',
-        name: 'K. Radha',
-        role: 'Language Specialist',
-        subjects: ['Hindi', 'Spoken Hindi'],
-        experience: '10 Years of experience in teaching Hindi as a second language and spoken Hindi coaching.',
-        bio: 'Mrs. Radha specializes in making language learning easy and enjoyable. Her conversational approach helps students gain confidence in spoken Hindi quickly.',
-        email: 'radha@srikarthikeya.in',
-        phone: '+91 98765 43211'
-    },
-    {
-        id: 'arulselvi',
-        name: 'V. Arulselvi',
-        role: 'Math & Logic Expert',
-        subjects: ['Maths', 'Abacus'],
-        experience: '8 Years experience in mathematical education and certified Abacus trainer.',
-        bio: 'Mrs. Arulselvi is passionate about removing the fear of mathematics. Her expertise in Abacus helps students improve their calculation speed and concentration.',
-        email: 'arulselvi@srikarthikeya.in',
-        phone: '+91 98765 43212'
-    },
-    {
-        id: 'vaishnavi',
-        name: 'T. Vaishnavi',
-        role: 'Subject Educator',
-        subjects: ['Science', 'English'],
-        experience: '6 Years experience in teaching core subjects with a focus on conceptual clarity.',
-        bio: 'Ms. Vaishnavi focuses on building strong foundations in Science and English. Her interactive teaching style keeps students engaged and curious about the world around them.',
-        email: 'vaishnavi@srikarthikeya.in',
-        phone: '+91 98765 43213'
-    }
-];
+import { staffData } from '../data/staffData';
 
 export default function StaffDetail() {
     const { id } = useParams();

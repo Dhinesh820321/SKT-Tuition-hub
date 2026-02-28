@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+ 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import CountUp from 'react-countup';
@@ -12,6 +13,9 @@ import 'swiper/css/effect-fade';
 
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
+import StaffCard from '../components/StaffCard';
+import ClassTimings from '../components/ClassTimings';
+import { staffData } from '../data/staffData';
 
 // MUI Icons
 import SchoolIcon from '@mui/icons-material/School';
@@ -37,8 +41,8 @@ import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 import heroImg from '../assets/images/hero_classroom.png';
-import studentsImg from '../assets/images/students_learning.png';
-import founderImg from '../assets/images/founder.png';
+import subalakshmi from '../assets/images/subalakshmi.png';
+
 
 import './Home.css';
 
@@ -74,14 +78,6 @@ const classes = [
     },
 ];
 
-const skills = [
-    { icon: <BrushIcon />, title: 'Drawing & Art', desc: 'Creative expression through sketching, painting & crafts' },
-    { icon: <MusicNoteIcon />, title: 'Music', desc: 'Vocal training and instrumental basics' },
-    { icon: <ComputerIcon />, title: 'Computer Skills', desc: 'Basic computing and digital literacy' },
-    { icon: <PsychologyIcon />, title: 'Mental Maths', desc: 'Speed calculation and logical reasoning' },
-    { icon: <TranslateIcon />, title: 'Spoken English', desc: 'Communication skills and fluency' },
-    { icon: <FitnessCenterIcon />, title: 'Yoga & Fitness', desc: 'Physical wellness and concentration' },
-];
 
 const testimonials = [
     {
@@ -110,26 +106,7 @@ const testimonials = [
     },
 ];
 
-const timings = [
-    {
-        batch: 'Morning Batch',
-        time: '6:00 AM – 8:00 AM',
-        desc: 'Regular academic coaching for all classes',
-        icon: '🌅',
-    },
-    {
-        batch: 'Evening Batch',
-        time: '6:00 PM – 9:00 PM',
-        desc: 'Extended coaching with homework support',
-        icon: '🌆',
-    },
-];
 
-const skillTimings = [
-    { time: '10:00 AM – 12:00 PM', label: 'Morning Session' },
-    { time: '2:00 PM – 5:00 PM', label: 'Afternoon Session' },
-    { time: '6:00 PM – 8:00 PM', label: 'Evening Session' },
-];
 
 /* ─── Stat Counter ─── */
 function StatCard({ icon, value, suffix, label, delay }) {
@@ -205,8 +182,8 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.7 }}
                     >
-                        Sri Karthikeya
-                        <span className="hero__title-accent"> Tuition & Weekend Skill Institute</span>
+                        Sri Karthikeya Tuition Hub
+                        <span className="hero__title-accent"> Regular & Weekend Skill Institute</span>
                     </motion.h1>
 
                     <div className="hero__typing">
@@ -285,7 +262,7 @@ export default function Home() {
                     <div className="about__grid">
                         <ScrollReveal direction="left" delay={0.2}>
                             <div className="about__image-wrapper">
-                                <img src={founderImg} alt="Founder" className="about__image" />
+                                <img src={subalakshmi} alt="Founder" className="about__image" />
                                 <div className="about__image-border" />
                                 <div className="about__image-dots" />
                             </div>
@@ -361,67 +338,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ─── TIMINGS ─── */}
-            <section className="timings section-padding" id="timings">
-                <div className="container">
-                    <ScrollReveal>
-                        <h2 className="section-title">Class <span className="gold-accent">Timings</span></h2>
-                        <div className="section-divider" />
-                        <p className="section-subtitle">
-                            Flexible batch timings designed to fit your child's schedule
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="timings__content">
-                        {/* Regular Batches */}
-                        <ScrollReveal delay={0.1}>
-                            <div className="timings__card glass-card">
-                                <h3 className="timings__card-title">
-                                    <AccessTimeIcon /> Regular Coaching
-                                </h3>
-                                <div className="timings__timeline">
-                                    {timings.map((t, i) => (
-                                        <motion.div
-                                            className="timeline-item"
-                                            key={i}
-                                            whileHover={{ x: 5 }}
-                                        >
-                                            <div className="timeline-item__dot" />
-                                            <div className="timeline-item__content">
-                                                <span className="timeline-item__emoji">{t.icon}</span>
-                                                <h4>{t.batch}</h4>
-                                                <p className="timeline-item__time">{t.time}</p>
-                                                <p className="timeline-item__desc">{t.desc}</p>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Skill Development Timings */}
-                        <ScrollReveal delay={0.2}>
-                            <div className="timings__card timings__card--skill glass-card">
-                                <h3 className="timings__card-title">
-                                    <PsychologyIcon /> Skill Development
-                                </h3>
-                                <div className="timings__skill-list">
-                                    {skillTimings.map((st, i) => (
-                                        <motion.div
-                                            className="skill-timing"
-                                            key={i}
-                                            whileHover={{ scale: 1.02 }}
-                                        >
-                                            <span className="skill-timing__label">{st.label}</span>
-                                            <span className="skill-timing__time">{st.time}</span>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
+            {/* ─── CLASS TIMINGS ─── */}
+            <ClassTimings />
 
             {/* ─── WEEKEND SKILL DEVELOPMENT ─── */}
             <section className="skills-section section-padding" id="skills">
@@ -466,39 +384,39 @@ export default function Home() {
             <section className="staff section-padding" id="staff">
                 <div className="container">
                     <ScrollReveal>
-                        <h2 className="section-title">Our Expert <span className="gold-accent">Staff</span></h2>
-                        <div className="section-divider" />
-                        <p className="section-subtitle">
-                            Dedicated educators committed to your child's success
-                        </p>
+                        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                            <h2 className="section-title" style={{ display: 'inline-block', position: 'relative' }}>
+                                Our Expert <span style={{ background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Staff</span>
+                                <motion.div
+                                    className="gradient-underline"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '100%' }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    style={{
+                                        height: '4px',
+                                        background: 'linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b)',
+                                        borderRadius: '2px',
+                                        marginTop: '8px'
+                                    }}
+                                />
+                            </h2>
+                            <p className="section-subtitle" style={{ maxWidth: '600px', margin: '20px auto 0' }}>
+                                Learn from the best minds dedicated to shaping the next generation of leaders and thinkers.
+                            </p>
+                        </div>
                     </ScrollReveal>
 
-                    <div className="staff__grid">
-                        {[
-                            { id: 'subalakshmi', name: 'K. Subalakshmi', subjects: 'Tamil, Science, Handwriting, Spoken English, Phonics, Dolls Making' },
-                            { id: 'radha', name: 'K. Radha', subjects: 'Hindi, Spoken Hindi' },
-                            { id: 'arulselvi', name: 'V. Arulselvi', subjects: 'Maths, Abacus' },
-                            { id: 'vaishnavi', name: 'T. Vaishnavi', subjects: 'Science, English' },
-                        ].map((member, i) => (
-                            <ScrollReveal key={i} delay={i * 0.15}>
-                                <motion.div
-                                    className="staff-card glass-card"
-                                    whileHover={{ y: -10 }}
-                                >
-                                    <div className="staff-card__img-container">
-                                        <div className="staff-card__img-placeholder">
-                                            {member.name.charAt(0)}
-                                        </div>
-                                    </div>
-                                    <div className="staff-card__content">
-                                        <h3>{member.name}</h3>
-                                        <p className="staff-card__subjects">{member.subjects}</p>
-                                        <Link to={`/staff/${member.id}`} className="staff-card__btn">
-                                            View Profile
-                                        </Link>
-                                    </div>
-                                </motion.div>
-                            </ScrollReveal>
+                    <div className="staff-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '3rem',
+                    }}>
+                        {staffData.map((staff, index) => (
+                            <StaffCard
+                                key={staff.id}
+                                {...staff}
+                                delay={index * 0.1}
+                            />
                         ))}
                     </div>
                 </div>
@@ -577,25 +495,25 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="contact-preview__info">
-                                <motion.a href="https://maps.google.com/?q=Mannampandal+Tamil+Nadu" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} className="contact-preview__info-item">
+                                <motion.a href="https://maps.app.goo.gl/Z3Bhrd7JwSk122hRA" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} className="contact-preview__info-item">
                                     <LocationOnIcon />
                                     <div>
                                         <h5>Visit Us</h5>
-                                        <p>📍 Mannampandal, Tamil Nadu</p>
+                                        <p>📍Mayiladuthurai District, Mannampandal, Tamil Nadu</p>
                                     </div>
                                 </motion.a>
                                 <motion.a href="mailto:info@srikarthikeya.in" whileHover={{ scale: 1.05 }} className="contact-preview__info-item">
                                     <EmailIcon />
                                     <div>
                                         <h5>Email Us</h5>
-                                        <p>📧 info@srikarthikeya.in</p>
+                                        <p>📧srikarthikeyatuitionhub@gmail.com</p>
                                     </div>
                                 </motion.a>
                                 <motion.a href="tel:+919876543210" whileHover={{ scale: 1.05 }} className="contact-preview__info-item">
                                     <PhoneIcon />
                                     <div>
                                         <h5>Call Us</h5>
-                                        <p>📞 +91 98765 43210</p>
+                                        <p>📞 +91  76399 61310 </p>
                                     </div>
                                 </motion.a>
                             </div>

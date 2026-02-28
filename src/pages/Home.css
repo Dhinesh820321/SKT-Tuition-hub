@@ -105,7 +105,7 @@
     text-align: center;
     max-width: 800px;
     padding: 0 1.5rem;
-    padding-top: 5rem;
+    padding-top: 8rem;
 }
 
 .hero__badge {
@@ -216,7 +216,7 @@
 
 /* ─── STATS ─── */
 .stats {
-    margin-top: -4rem;
+    margin-top: -6rem;
     position: relative;
     z-index: 5;
 }
@@ -917,4 +917,22 @@
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+.staff-card__img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.staff-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.staff-card:hover .staff-card__img {
+    transform: scale(1.08);
 }

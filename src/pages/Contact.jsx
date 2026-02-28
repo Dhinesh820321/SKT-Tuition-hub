@@ -18,19 +18,20 @@ const contactInfo = [
     {
         icon: <LocationOnIcon />,
         title: 'Visit Us',
-        lines: ['Mannampandal', 'Tamil Nadu, India'],
+        lines: ['Mayiladuthurai District','Mannampandal', 'Tamil Nadu, India'],
     },
     {
         icon: <PhoneIcon />,
         title: 'Call Us',
-        lines: ['+91 98765 43210'],
-        link: 'tel:+919876543210',
+        lines: ['+91 76399 61310'],
+        link: 'tel:+917639961310',
+       
     },
     {
         icon: <EmailIcon />,
         title: 'Email Us',
-        lines: ['info@srikarthikeya.in'],
-        link: 'mailto:info@srikarthikeya.in',
+        lines: ['srikarthikeyatuitionhub@gmail.com'],
+        link: 'mailto:srikarthikeyatuitionhub@gmail.com',
     },
     {
         icon: <AccessTimeIcon />,
@@ -54,7 +55,7 @@ export default function Contact() {
         const msg = encodeURIComponent(
             `*Contact Inquiry*\n\n👤 ${form.name}\n📞 ${form.phone}\n📧 ${form.email || 'N/A'}\n💬 ${form.message}`
         );
-        window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+        window.open(`https://wa.me/917639961310?text=${msg}`, '_blank');
         setSent(true);
     };
 
@@ -178,7 +179,8 @@ export default function Contact() {
                             <div className="contact__map glass-card">
                                 <iframe
                                     title="Sri Karthikeya Location"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15548.23!2d79.45!3d11.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDU3JzAwLjAiTiA3OcKwMjcnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+
+                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3915.151724346669!2d79.68196397504659!3d11.102067789067169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDA2JzA3LjQiTiA3OcKwNDEnMDQuMyJF!5e0!3m2!1sen!2sin!4v1772191406133!5m2!1sen!2sin" 
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0, borderRadius: '16px' }}
@@ -199,7 +201,7 @@ export default function Contact() {
                                 <p>Got quick questions? Message us on WhatsApp for an immediate response.</p>
                             </div>
                             <a
-                                href="https://wa.me/919876543210?text=Hi%2C%20I%20have%20a%20query%20about%20Sri%20Karthikeya%20Tuition%20Hub"
+                                href="https://wa.me/917639961310?text=Hi%2C%20I%20have%20a%20query%20about%20Sri%20Karthikeya%20Tuition%20Hub"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="hero__btn hero__btn--primary ripple-button"

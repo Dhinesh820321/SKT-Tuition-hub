@@ -75,7 +75,7 @@ export default function Admission() {
                 `🏠 Address: ${form.address || 'N/A'}\n` +
                 `💬 Message: ${form.message || 'N/A'}`
             );
-            window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+            window.location.href = `https://wa.me/919876543210?text=${msg}`;
         }, 2500);
     };
 
