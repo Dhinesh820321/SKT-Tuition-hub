@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TextField from '@mui/material/TextField';
@@ -61,22 +62,43 @@ export default function Admission() {
             return;
         }
 
-        setSubmitted(true);
+        // TODO: Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
+        emailjs.send(
+            "service_1l7sshc",
+            "template_pk4e6hs",
+            {
+                studentName: form.studentName,
+                parentName: form.parentName,
+                phone: form.phone,
+                email: form.email || "N/A",
+                class: form.class,
+                address: form.address || "N/A",
+                message: form.message || "N/A",
+            },
+            "NOn3XDd4ghhAuyh9b"
+        )
+            .then(() => {
+                setSubmitted(true);
 
-        // Redirect to WhatsApp after 2 seconds
-        setTimeout(() => {
-            const msg = encodeURIComponent(
-                `*New Admission Inquiry*\n\n` +
-                `👤 Student: ${form.studentName}\n` +
-                `👨‍👩‍👦 Parent: ${form.parentName}\n` +
-                `📞 Phone: ${form.phone}\n` +
-                `📧 Email: ${form.email || 'N/A'}\n` +
-                `📚 Class: ${form.class}\n` +
-                `🏠 Address: ${form.address || 'N/A'}\n` +
-                `💬 Message: ${form.message || 'N/A'}`
-            );
-            window.location.href = `https://wa.me/919876543210?text=${msg}`;
-        }, 2500);
+                // Redirect to WhatsApp after 2.5 seconds
+                setTimeout(() => {
+                    const msg = encodeURIComponent(
+                        `*New Admission Inquiry*\n\n` +
+                        `👤 Student: ${form.studentName}\n` +
+                        `👨‍👩‍👦 Parent: ${form.parentName}\n` +
+                        `📞 Phone: ${form.phone}\n` +
+                        `📧 Email: ${form.email || 'N/A'}\n` +
+                        `📚 Class: ${form.class}\n` +
+                        `🏠 Address: ${form.address || 'N/A'}\n` +
+                        `💬 Message: ${form.message || 'N/A'}`
+                    );
+                  
+                }, 2500);
+            })
+            .catch((error) => {
+                alert("Email send failed ❌");
+                console.error("EmailJS Error:", error);
+            });
     };
 
     return (

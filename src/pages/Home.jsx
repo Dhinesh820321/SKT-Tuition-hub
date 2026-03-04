@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
- 
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
@@ -24,12 +23,10 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import BrushIcon from '@mui/icons-material/Brush';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import ScienceIcon from '@mui/icons-material/Science';
+
 import CalculateIcon from '@mui/icons-material/Calculate';
 import TranslateIcon from '@mui/icons-material/Translate';
-import ComputerIcon from '@mui/icons-material/Computer';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+
 import StarIcon from '@mui/icons-material/Star';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -37,8 +34,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+
 
 import heroImg from '../assets/images/hero_classroom.png';
 import subalakshmi from '../assets/images/subalakshmi.png';
@@ -183,7 +179,7 @@ export default function Home() {
                         transition={{ delay: 0.5, duration: 0.7 }}
                     >
                         Sri Karthikeya Tuition Hub
-                        <span className="hero__title-accent"> Regular & Weekend Skill Institute</span>
+                        <span className="hero__title-accent"> Regular & Weekend Skill Development Institute</span>
                     </motion.h1>
 
                     <div className="hero__typing">

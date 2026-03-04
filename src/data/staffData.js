@@ -3,6 +3,7 @@ import subalakshmiImg from '../assets/images/subalakshmi.png';
 import arulselviImg from '../assets/images/arulselvi.png';
 import radhaImg from '../assets/staff/radha.png';
 import varshaImg from '../assets/staff/varsha.png';
+import santhiyaImg from '../assets/images/santhiya.png';
 
 export const staffData = [
     {
@@ -64,7 +65,7 @@ export const staffData = [
     },
     {
         id: 'varsha',
-        name: 'T. Varsha',
+        name: 'T. Vaishnavi',
         subjects: ['Science', 'English'],
         shortExpertise: 'Science & English Teacher',
         photo: varshaImg,
@@ -80,5 +81,24 @@ export const staffData = [
             { name: 'Digital Literacy', level: 90 }
         ],
         specialization: 'Integrative STEM Education'
+    },
+    {
+        id: 'rsanthiya',
+        name: 'R. Santhiya',
+        subjects: ['Drawing', 'Sketching', 'Painting', 'Creative Arts', 'Art Competition Training'],
+        shortExpertise: 'Drawing Artist',
+        photo: santhiyaImg,
+        role: 'Creative Arts Faculty',
+        experience: '5+ Years teaching experience in Fine Arts. Specialized in Pencil Sketching & Color Theory. Conducted school-level art workshops and guided students in inter-school art competitions.',
+        bio: 'R. Santhiya is a passionate and creative Drawing Artist with a strong dedication to nurturing artistic talent among students. She specializes in sketching, painting, and creative expression techniques. She believes that art enhances imagination, focus, and emotional intelligence in children.',
+        mobile: '9876543215',
+        whatsapp: '9876543215',
+        email: 'santhiya@tuition.com',
+        skills: [
+            { name: 'Pencil Sketching', level: 95 },
+            { name: 'Watercolor Painting', level: 90 },
+            { name: 'Creative Composition', level: 88 }
+        ],
+        specialization: 'Fine Arts & Creative Expression'
     }
 ];

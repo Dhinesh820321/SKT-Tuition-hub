@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import PhoneIcon from '@mui/icons-material/Phone';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
 import './StaffCard.css';
 
-const StaffCard = ({ id, name, subjects, shortExpertise, photo, mobile, whatsapp, email, delay }) => {
+const StaffCard = ({ id, name, subjects, shortExpertise, photo, delay }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     return (
@@ -57,20 +54,6 @@ const StaffCard = ({ id, name, subjects, shortExpertise, photo, mobile, whatsapp
                         </div>
                     </div>
 
-                    <div className="contact-links-mini">
-                        <div className="contact-item-mini">
-                            <PhoneIcon sx={{ fontSize: 18 }} />
-                            <span>{mobile}</span>
-                        </div>
-                        <div className="contact-item-mini">
-                            <WhatsAppIcon sx={{ fontSize: 18 }} />
-                            <span>{whatsapp}</span>
-                        </div>
-                        <div className="contact-item-mini">
-                            <EmailIcon sx={{ fontSize: 18 }} />
-                            <span className="email-text">{email}</span>
-                        </div>
-                    </div>
 
                     <Link to={`/staff/${id}`} className="full-profile-btn ripple-button">
                         View Full Profile <ArrowForwardIcon sx={{ fontSize: 16 }} />

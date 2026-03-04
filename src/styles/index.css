@@ -286,6 +286,13 @@ a {
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
 }
 
+/* Container utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 /* Swiper custom styles */
 .swiper-pagination-bullet-active {
   background: var(--primary-600) !important;

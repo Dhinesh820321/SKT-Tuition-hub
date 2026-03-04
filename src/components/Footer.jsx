@@ -53,7 +53,7 @@ export default function Footer() {
                             <li><Link to="/">Home</Link></li>
                             <li><a href="/#classes">Our Classes</a></li>
                             <li><Link to="/staff">Our Staff</Link></li>
-                            <li><Link to="/admission-form">Admission</Link></li>
+                            <li><Link to="/admission">Admission</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </motion.div>

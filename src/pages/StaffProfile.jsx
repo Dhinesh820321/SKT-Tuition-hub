@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { staffData } from '../data/staffData';
 import PageTransition from '../components/PageTransition';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import PhoneIcon from '@mui/icons-material/Phone';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
 import StarIcon from '@mui/icons-material/Star';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -17,24 +14,21 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import './StaffProfile.css';
 
 const Particles = () => {
-    const [mounted, setMounted] = useState(false);
-    const [particles, setParticles] = useState([]);
-
-    useEffect(() => {
-        setMounted(true);
-        setParticles([...Array(15)].map((_, i) => ({
+    const [particles] = useState(() => {
+        if (typeof window === 'undefined') return [];
+        return [...Array(15)].map((_, i) => ({
             id: i,
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
             scale: Math.random() * 0.5 + 0.5,
             opacity: Math.random() * 0.3 + 0.1,
             animY: Math.random() * -200 - 100,
             animOpacity: Math.random() * 0.5 + 0.2,
             duration: Math.random() * 8 + 8
-        })));
-    }, []);
+        }));
+    });
 
-    if (!mounted) return null;
+    if (particles.length === 0) return null;
 
     return (
         <div className="particles-container">
@@ -84,21 +78,6 @@ const zoomIn = {
     show: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
-// Custom animated contact pills
-const ContactPill = ({ icon, text, href }) => (
-    <motion.a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="contact-pill glass-panel"
-        variants={fadeUp}
-        whileHover={{ scale: 1.05, y: -5, boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)" }}
-        whileTap={{ scale: 0.95 }}
-    >
-        <span className="pill-icon">{icon}</span>
-        <span className="pill-text">{text}</span>
-    </motion.a>
-);
 
 const StaffProfile = () => {
     const { id } = useParams();
@@ -140,7 +119,18 @@ const StaffProfile = () => {
                     <motion.div className="profile-hero" variants={staggerContainer} initial="hidden" animate="show">
                         <motion.div className="hero-img-col" variants={zoomIn}>
                             <div className="hero-image-wrapper">
-                                <div className="glow-ring"></div>
+                                <div className="star-orbit-system">
+                                    <div className="orbit-glow-aura"></div>
+                                    <div className="orbit-guide"></div>
+                                    <div className="star-orbit-primary">
+                                        <div className="star-trail-primary"></div>
+                                        <div className="star-head-primary"></div>
+                                    </div>
+                                    <div className="star-orbit-secondary">
+                                        <div className="star-trail-secondary"></div>
+                                        <div className="star-head-secondary"></div>
+                                    </div>
+                                </div>
                                 {staff.photo ? (
                                     <img src={staff.photo} alt={staff.name} className="profile-img" />
                                 ) : (
@@ -170,12 +160,6 @@ const StaffProfile = () => {
                             <motion.p variants={fadeUp} className="staff-bio-premium">
                                 {staff.bio}
                             </motion.p>
-
-                            <motion.div className="hero-contacts" variants={staggerContainer}>
-                                <ContactPill icon={<PhoneIcon />} text="Call" href={`tel:${staff.mobile}`} />
-                                <ContactPill icon={<WhatsAppIcon />} text="WhatsApp" href={`https://wa.me/91${staff.whatsapp}`} />
-                                <ContactPill icon={<EmailIcon />} text="Email" href={`mailto:${staff.email}`} />
-                            </motion.div>
                         </div>
                     </motion.div>
 
